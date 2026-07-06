@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback, useRef } from "react"
+import { useState, useCallback, useRef, useEffect } from "react"
 import { LoadingScreen } from "@/components/loading-screen"
 import { HsHubMouseAura } from "@/components/hs-hub-mouse-aura"
 import { ScrollytellingSection } from "@/components/scrollytelling-section"
@@ -12,20 +12,28 @@ export default function Home() {
   const [frames, setFrames] = useState<HTMLImageElement[]>([])
   const [isReady, setIsReady] = useState(false)
   const isPreloadingRemaining = useRef(false)
+  // Keep a stable ref to the latest frames array so the callback never needs
+  // frames in its dep array (avoids re-subscription churn in scrollytelling-section)
+  const framesRef = useRef<HTMLImageElement[]>([])
 
-  // Preloads the remaining 200 frames in the background in batches of 20
+  // Mirror state → ref on every render
+  useEffect(() => {
+    framesRef.current = frames
+  })
+
+  // Stable callback — identity never changes because it reads frames via ref
   const preloadRemainingFrames = useCallback(async () => {
     if (isPreloadingRemaining.current) return
     isPreloadingRemaining.current = true
     console.log("Background preloading of remaining frames (41-240) started...")
 
-    const updatedFrames = [...frames]
+    // Snapshot current frames from the ref (not closure)
+    const updatedFrames = [...framesRef.current]
     updatedFrames.length = TOTAL_FRAMES
     const BATCH_SIZE = 20
 
     const loadFrame = (index: number): Promise<void> => {
       return new Promise((resolve) => {
-        // If already loaded, resolve immediately
         if (updatedFrames[index]) {
           resolve()
           return
@@ -50,12 +58,12 @@ export default function Home() {
         batch.push(loadFrame(j))
       }
       await Promise.all(batch)
-      // Update state incrementally so canvas can render newer frames as they load
+      // Update state incrementally — canvas picks up new frames as they arrive
       setFrames([...updatedFrames])
     }
 
     console.log("All 240 frames preloaded in memory!")
-  }, [frames])
+  }, []) // stable — reads frames via ref, not closure
 
   // Triggers once the loading screen completes preloading the first 40 frames
   const handleLoadComplete = useCallback((initialFrames: HTMLImageElement[]) => {

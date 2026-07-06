@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "HS Hub | YieldSage, HollowScan & Polymarket Analytics",
   description:
     "Unifying premium DeFi yield intelligence on Mantle, real-time retail arbitrage scanning, and prediction market analytics tools under one cinematic space.",
-  icons: { icon: "/favicon.ico" },
+
   openGraph: {
     title: "HS Hub | YieldSage, HollowScan & Polymarket Analytics",
     description:
