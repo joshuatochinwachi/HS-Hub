@@ -6,7 +6,7 @@ interface LoadingScreenProps {
   onComplete: (first40Frames: HTMLImageElement[]) => void
 }
 
-const INITIAL_PRELOAD_COUNT = 40
+const TOTAL_FRAMES = 240
 
 export function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const [progress, setProgress] = useState(0)
@@ -45,10 +45,10 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
     return () => clearInterval(glitchInterval)
   }, [])
 
-  // Actual frame loading preloader for the first 40 frames
+  // Preload all 240 frames before releasing the loading screen
   useEffect(() => {
     let loadedCount = 0
-    const frames: HTMLImageElement[] = new Array(240) // Array size is 240
+    const frames: HTMLImageElement[] = new Array(TOTAL_FRAMES)
 
     const loadFrame = (index: number): Promise<void> => {
       return new Promise((resolve) => {
@@ -58,24 +58,24 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
         img.onload = () => {
           frames[index] = img
           loadedCount++
-          setProgress(Math.round((loadedCount / INITIAL_PRELOAD_COUNT) * 100))
+          setProgress(Math.round((loadedCount / TOTAL_FRAMES) * 100))
           resolve()
         }
         img.onerror = () => {
-          // Still count failed frames to avoid blocking the loader
+          // Count failed frames too so the loader never gets stuck
           loadedCount++
-          setProgress(Math.round((loadedCount / INITIAL_PRELOAD_COUNT) * 100))
+          setProgress(Math.round((loadedCount / TOTAL_FRAMES) * 100))
           resolve()
         }
       })
     }
 
     const loadInitialBatch = async () => {
-      const BATCH_SIZE = 10
-      // Load frames 0 to 39
-      for (let i = 0; i < INITIAL_PRELOAD_COUNT; i += BATCH_SIZE) {
+      const BATCH_SIZE = 20
+      // Load all 240 frames before releasing the loading screen
+      for (let i = 0; i < TOTAL_FRAMES; i += BATCH_SIZE) {
         const batch = []
-        for (let j = i; j < Math.min(i + BATCH_SIZE, INITIAL_PRELOAD_COUNT); j++) {
+        for (let j = i; j < Math.min(i + BATCH_SIZE, TOTAL_FRAMES); j++) {
           batch.push(loadFrame(j))
         }
         await Promise.all(batch)

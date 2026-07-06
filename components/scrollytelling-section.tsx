@@ -6,7 +6,6 @@ import { ScrollCanvas } from "@/components/scroll-canvas"
 
 interface ScrollytellingSectionProps {
   frames: HTMLImageElement[]
-  preloadRemainingFrames: () => void
 }
 
 // Flanking Label component: draws 1px horizontal lines from left to right on view
@@ -195,7 +194,6 @@ function ScrollIndicator({ scrollYProgress }: { scrollYProgress: MotionValue<num
 
 export function ScrollytellingSection({
   frames,
-  preloadRemainingFrames,
 }: ScrollytellingSectionProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [activePhase, setActivePhase] = useState(1)
@@ -212,14 +210,9 @@ export function ScrollytellingSection({
     restDelta: 0.0005,
   })
 
-  // Track active phase and trigger loading
+  // Track active phase
   useEffect(() => {
     const handleProgressChange = (latest: number) => {
-      // Trigger background preloading once the user starts scrolling (e.g. past 5%)
-      if (latest >= 0.05) {
-        preloadRemainingFrames()
-      }
-
       // Determine active narrative phase based on frame segments:
       // Phase 1 (Intro): 0 to 40 frames (~16.6%)
       // Phase 2 (YieldSage): 41 to 100 frames (~41.6%)
@@ -238,7 +231,7 @@ export function ScrollytellingSection({
 
     const unsubscribe = smoothProgress.on("change", handleProgressChange)
     return () => unsubscribe()
-  }, [smoothProgress, preloadRemainingFrames])
+  }, [smoothProgress])
 
   // Framer Motion staggered child variants for text entrance delays
   const staggerContainer = {

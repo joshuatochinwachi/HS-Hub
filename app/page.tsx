@@ -6,68 +6,14 @@ import { HsHubMouseAura } from "@/components/hs-hub-mouse-aura"
 import { ScrollytellingSection } from "@/components/scrollytelling-section"
 
 const TOTAL_FRAMES = 240
-const INITIAL_PRELOAD_COUNT = 40
 
 export default function Home() {
   const [frames, setFrames] = useState<HTMLImageElement[]>([])
   const [isReady, setIsReady] = useState(false)
-  const isPreloadingRemaining = useRef(false)
-  // Keep a stable ref to the latest frames array so the callback never needs
-  // frames in its dep array (avoids re-subscription churn in scrollytelling-section)
-  const framesRef = useRef<HTMLImageElement[]>([])
 
-  // Mirror state → ref on every render
-  useEffect(() => {
-    framesRef.current = frames
-  })
-
-  // Stable callback — identity never changes because it reads frames via ref
-  const preloadRemainingFrames = useCallback(async () => {
-    if (isPreloadingRemaining.current) return
-    isPreloadingRemaining.current = true
-    console.log("Background preloading of remaining frames (41-240) started...")
-
-    // Snapshot current frames from the ref (not closure)
-    const updatedFrames = [...framesRef.current]
-    updatedFrames.length = TOTAL_FRAMES
-    const BATCH_SIZE = 20
-
-    const loadFrame = (index: number): Promise<void> => {
-      return new Promise((resolve) => {
-        if (updatedFrames[index]) {
-          resolve()
-          return
-        }
-        const img = new Image()
-        const frameNum = String(index + 1).padStart(3, "0")
-        img.src = `/frames/ezgif-frame-${frameNum}.jpg`
-        img.onload = () => {
-          updatedFrames[index] = img
-          resolve()
-        }
-        img.onerror = () => {
-          resolve()
-        }
-      })
-    }
-
-    // Load remaining frames in batches starting from 40
-    for (let i = INITIAL_PRELOAD_COUNT; i < TOTAL_FRAMES; i += BATCH_SIZE) {
-      const batch = []
-      for (let j = i; j < Math.min(i + BATCH_SIZE, TOTAL_FRAMES); j++) {
-        batch.push(loadFrame(j))
-      }
-      await Promise.all(batch)
-      // Update state incrementally — canvas picks up new frames as they arrive
-      setFrames([...updatedFrames])
-    }
-
-    console.log("All 240 frames preloaded in memory!")
-  }, []) // stable — reads frames via ref, not closure
-
-  // Triggers once the loading screen completes preloading the first 40 frames
-  const handleLoadComplete = useCallback((initialFrames: HTMLImageElement[]) => {
-    setFrames(initialFrames)
+  // Triggers once the loading screen completes preloading all 240 frames
+  const handleLoadComplete = useCallback((loadedFrames: HTMLImageElement[]) => {
+    setFrames(loadedFrames)
     setIsReady(true)
   }, [])
 
@@ -185,7 +131,6 @@ export default function Home() {
         {/* Cinematic Scrollytelling Section */}
         <ScrollytellingSection
           frames={frames}
-          preloadRemainingFrames={preloadRemainingFrames}
         />
 
         {/* -------------------- BELOW FOLD DETAILED SECTIONS -------------------- */}
