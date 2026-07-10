@@ -294,7 +294,7 @@ export default function Home() {
 
               <div className="pt-4">
                 <a
-                  href="https://www.hollowscan.com"
+                  href="https://retail.hollowscan.com"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-block px-8 py-3.5 bg-[var(--hollowscan)] text-white text-xs font-semibold uppercase tracking-widest rounded-full hover:bg-[var(--hollowscan)]/80 hover:shadow-[0_0_30px_rgba(255,85,0,0.3)] transition-all duration-300"
@@ -422,7 +422,7 @@ export default function Home() {
               <a href="https://yield.hollowscan.com" target="_blank" rel="noreferrer" className="text-xs text-white/60 hover:text-[var(--yieldsage)] transition-colors">
                 YieldSage DeFi
               </a>
-              <a href="https://www.hollowscan.com" target="_blank" rel="noreferrer" className="text-xs text-white/60 hover:text-[var(--hollowscan)] transition-colors">
+              <a href="https://retail.hollowscan.com" target="_blank" rel="noreferrer" className="text-xs text-white/60 hover:text-[var(--hollowscan)] transition-colors">
                 HollowScan Scanner
               </a>
               <a href="https://pmkt.bcinvestments.one" target="_blank" rel="noreferrer" className="text-xs text-white/60 hover:text-[var(--polymarket)] transition-colors">

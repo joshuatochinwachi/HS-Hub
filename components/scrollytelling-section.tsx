@@ -399,7 +399,7 @@ export function ScrollytellingSection({
             </motion.p>
             <motion.div variants={staggerItem} className="mt-2 pointer-events-auto">
               <a
-                href="https://www.hollowscan.com"
+                href="https://retail.hollowscan.com"
                 target="_blank"
                 rel="noreferrer"
                 onMouseEnter={handleOrangeHoverEnter}
