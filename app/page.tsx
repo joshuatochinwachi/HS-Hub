@@ -175,7 +175,7 @@ export default function Home() {
 
               <div>
                 <a
-                  href="https://www.yieldsageai.xyz"
+                  href="https://yield.hollowscan.com"
                   target="_blank"
                   rel="noreferrer"
                   className="inline-block px-8 py-3.5 bg-[var(--yieldsage)] text-black text-xs font-semibold uppercase tracking-widest rounded-full hover:bg-[var(--yieldsage)]/80 hover:shadow-[0_0_30px_rgba(0,255,136,0.3)] transition-all duration-300"
@@ -419,7 +419,7 @@ export default function Home() {
             {/* Links Column 1 */}
             <div className="flex flex-col gap-3">
               <span className="text-[10px] font-mono text-white/40 uppercase tracking-widest font-semibold">Products</span>
-              <a href="https://www.yieldsageai.xyz" target="_blank" rel="noreferrer" className="text-xs text-white/60 hover:text-[var(--yieldsage)] transition-colors">
+              <a href="https://yield.hollowscan.com" target="_blank" rel="noreferrer" className="text-xs text-white/60 hover:text-[var(--yieldsage)] transition-colors">
                 YieldSage DeFi
               </a>
               <a href="https://www.hollowscan.com" target="_blank" rel="noreferrer" className="text-xs text-white/60 hover:text-[var(--hollowscan)] transition-colors">
