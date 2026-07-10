@@ -365,7 +365,7 @@ export function ScrollytellingSection({
             </motion.p>
             <motion.div variants={staggerItem} className="mt-2 pointer-events-auto">
               <a
-                href="https://www.yieldsageai.xyz"
+                href="https://yield.hollowscan.com"
                 target="_blank"
                 rel="noreferrer"
                 onMouseEnter={handleGreenHoverEnter}
