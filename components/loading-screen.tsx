@@ -202,15 +202,15 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
         <div className="mt-8 flex gap-6 text-[10px] font-mono text-white/20 select-none">
           <div className={`flex items-center gap-2 transition-colors duration-300 ${progress > 25 ? "text-[rgba(0,255,136,0.85)] font-semibold" : ""}`}>
             <span className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${progress > 25 ? "bg-[rgba(0,255,136,0.85)] shadow-[0_0_6px_rgba(0,255,136,0.6)]" : "bg-white/10"}`} />
-            YIELD
+            YIELDSAGE
           </div>
           <div className={`flex items-center gap-2 transition-colors duration-300 ${progress > 50 ? "text-[rgba(0,255,136,0.85)] font-semibold" : ""}`}>
             <span className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${progress > 50 ? "bg-[rgba(0,255,136,0.85)] shadow-[0_0_6px_rgba(0,255,136,0.6)]" : "bg-white/10"}`} />
-            SCAN
+            HOLLOWSCAN
           </div>
           <div className={`flex items-center gap-2 transition-colors duration-300 ${progress > 75 ? "text-[rgba(0,255,136,0.85)] font-semibold" : ""}`}>
             <span className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${progress > 75 ? "bg-[rgba(0,255,136,0.85)] shadow-[0_0_6px_rgba(0,255,136,0.6)]" : "bg-white/10"}`} />
-            MARKET
+            POLYMARKET BOT
           </div>
           <div className={`flex items-center gap-2 transition-colors duration-300 ${progress >= 100 ? "text-[rgba(0,255,136,0.85)] font-semibold" : ""}`}>
             <span className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${progress >= 100 ? "bg-[rgba(0,255,136,0.85)] shadow-[0_0_6px_rgba(0,255,136,0.6)]" : "bg-white/10"}`} />

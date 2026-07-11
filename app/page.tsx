@@ -85,14 +85,14 @@ export default function Home() {
             }}
           >
             {/* Logo */}
-            <a href="#sequence" onClick={handleNavClick} className="flex items-center gap-2 group select-none">
+            <div className="flex items-center gap-2 group select-none">
               <span className="w-6 h-6 rounded bg-gradient-to-tr from-[var(--yieldsage)] to-[var(--polymarket)] flex items-center justify-center text-[10px] font-bold font-mono text-black">
                 HS
               </span>
               <span className="text-sm font-semibold tracking-wider font-sans text-white/90">
                 HS <span className="text-white/40">Hub</span>
               </span>
-            </a>
+            </div>
 
             {/* Anchors */}
             <nav className="hidden md:flex items-center gap-8">
@@ -472,18 +472,17 @@ export default function Home() {
                         {/* Duplicate for seamless loop */}
                         <span className="text-[6px] text-amber-800 font-medium">🔥 Want more TCG deals before they sell out? Visit thetcgspecialist.co.uk — London&apos;s most trusted Pokémon card shop! DON&apos;T MISS OUT. 😉</span>
                         <span className="text-[6px] text-amber-800 font-medium">👀 Want to understand the full HollowScan rewards ecosystem? Explore the Rewards Matrix at retail.hollowscan.com/whitepaper. Don&apos;t sleep on it.</span>
-                      </div>
                     </div>
                   </div>
-
-                  {/* Product listings — continuous vertical scroll feed */}
+                </div>
+                {/* Product listings — continuous vertical scroll feed */}
                   <div className="flex-1 overflow-hidden bg-gray-50 relative">
                     {/* The inner strip is doubled so it loops seamlessly */}
                     <div className="animate-feed-scroll flex flex-col">
                       {/* ── First copy ── */}
                       {[
                         {
-                          img: "/api/product-img?name=panini_prizm_wc",
+                          img: "/products/panini_prizm_wc.png",
                           name: "26 Panini Prizm World Cup Soccer Exclusive Trading Cards Value Box",
                           price: "$34.97",
                           flagCode: "us",
@@ -493,7 +492,7 @@ export default function Home() {
                           liked: false,
                         },
                         {
-                          img: "/api/product-img?name=mega_greninja_ex",
+                          img: "/products/mega_greninja_ex.png",
                           name: "Pokémon TCG Mega Greninja ex Premium Collection",
                           price: "CA$69.98",
                           flagCode: "ca",
@@ -503,7 +502,7 @@ export default function Home() {
                           liked: false,
                         },
                         {
-                          img: "/api/product-img?name=perfect_order_box",
+                          img: "/products/perfect_order_box.png",
                           name: "Pokémon Mega Evolution Perfect Order Trading Card Game Booster Box",
                           price: "$169.99",
                           flagCode: "us",
@@ -513,7 +512,7 @@ export default function Home() {
                           liked: true,
                         },
                         {
-                          img: "/api/product-img?name=panini_prizm_wc",
+                          img: "/products/panini_prizm_wc.png",
                           name: "26 Panini Prizm World Cup Soccer Exclusive Trading Cards Value Box",
                           price: "$34.97",
                           flagCode: "us",
@@ -523,7 +522,7 @@ export default function Home() {
                           liked: false,
                         },
                         {
-                          img: "/api/product-img?name=trainers_toolkit",
+                          img: "/products/trainers_toolkit.png",
                           name: "Pokémon Trainer's Toolkit 2022",
                           price: "£59.99",
                           flagCode: "gb",
@@ -534,7 +533,7 @@ export default function Home() {
                         },
                         // ── Duplicate for seamless loop ──
                         {
-                          img: "/api/product-img?name=panini_prizm_wc",
+                          img: "/products/panini_prizm_wc.png",
                           name: "26 Panini Prizm World Cup Soccer Exclusive Trading Cards Value Box",
                           price: "$34.97",
                           flagCode: "us",
@@ -544,7 +543,7 @@ export default function Home() {
                           liked: false,
                         },
                         {
-                          img: "/api/product-img?name=mega_greninja_ex",
+                          img: "/products/mega_greninja_ex.png",
                           name: "Pokémon TCG Mega Greninja ex Premium Collection",
                           price: "CA$69.98",
                           flagCode: "ca",
@@ -554,7 +553,7 @@ export default function Home() {
                           liked: false,
                         },
                         {
-                          img: "/api/product-img?name=perfect_order_box",
+                          img: "/products/perfect_order_box.png",
                           name: "Pokémon Mega Evolution Perfect Order Trading Card Game Booster Box",
                           price: "$169.99",
                           flagCode: "us",
@@ -564,7 +563,7 @@ export default function Home() {
                           liked: true,
                         },
                         {
-                          img: "/api/product-img?name=panini_prizm_wc",
+                          img: "/products/panini_prizm_wc.png",
                           name: "26 Panini Prizm World Cup Soccer Exclusive Trading Cards Value Box",
                           price: "$34.97",
                           flagCode: "us",
@@ -574,7 +573,7 @@ export default function Home() {
                           liked: false,
                         },
                         {
-                          img: "/api/product-img?name=trainers_toolkit",
+                          img: "/products/trainers_toolkit.png",
                           name: "Pokémon Trainer's Toolkit 2022",
                           price: "£59.99",
                           flagCode: "gb",
