@@ -3,7 +3,7 @@
 A single-page cinematic scrollytelling website unifying three products:
 1. **YieldSage** (DeFi yield intelligence on Mantle Network) — [yieldsageai.xyz](https://www.yieldsageai.xyz)
 2. **HollowScan** (retail arbitrage deal-scanning app) — [hollowscan.com](https://www.hollowscan.com)
-3. **Polymarket Trading** (prediction market analytics tool) — [pmkt.bcinvestments.one](https://pmkt.bcinvestments.one)
+3. **Polymarket Trading** (prediction market analytics tool) — [pmkt.hollowscan.com](https://pmkt.hollowscan.com)
 
 This site replicates and extends the custom performance-optimized HTML5 Canvas scroll-scrub sequence, spring-smoothed overlay transitions, and luxury fintech design language from the YieldSage frontend.
 

@@ -344,7 +344,7 @@ export function ScrollytellingSection({
             One cohesive workspace.
           </h2>
           <p className="text-xs sm:text-sm font-sans text-white/45 max-w-sm mt-1 leading-relaxed font-light">
-            Scroll to step through YieldSage DeFi yield optimizer, HollowScan deal matching, and Polymarket Trading prediction analysis.
+            Scroll to step through YieldSage DeFi yield optimizer, HollowScan deal matching, and Polymarket Trading prediction bot.
           </p>
         </CinematicOverlay>
 
@@ -355,13 +355,13 @@ export function ScrollytellingSection({
           range={[41 / 240, 100 / 240]}
           position="bottom-left"
         >
-          <FlankingLabel text="DeFi Yield Optimization" colorClass="text-[var(--yieldsage)]/60" />
+          <FlankingLabel text="AI Yield Farming Agent" colorClass="text-[var(--yieldsage)]/60" />
           <motion.div variants={staggerContainer} initial="hidden" animate="show" className="flex flex-col gap-3 mt-1">
             <motion.h3 variants={staggerItem} className="text-3xl sm:text-4xl md:text-5xl font-serif text-white/95 leading-tight font-light">
               YieldSage DeFi Intelligence.
             </motion.h3>
             <motion.p variants={staggerItem} className="text-sm font-sans text-white/60 max-w-md leading-relaxed font-light">
-              Autonomous DeFi yield intelligence on Mantle Network. Features real-time risk-adjusted models, automatic portfolio scoring, and absolute transparent proof logs with 4,000+ verified transaction records.
+              Autonomous DeFi yield intelligence. Features real-time risk-adjusted models, automatic portfolio scoring, and absolute transparent proof logs with 6,000+ verified transaction records.
             </motion.p>
             <motion.div variants={staggerItem} className="mt-2 pointer-events-auto">
               <a
@@ -395,7 +395,7 @@ export function ScrollytellingSection({
               HollowScan Deal Radar.
             </motion.h3>
             <motion.p variants={staggerItem} className="text-sm font-sans text-white/60 max-w-md leading-relaxed font-light ml-auto">
-              Real-time retail barcode arbitrage scanner. Instant price scans across major retailers, live margin calculations, and lightning fast deal alerts. Live on iOS App Store and Google Play.
+              Real-time retail arbitrage trading app. Instant price scans across major retailers, live margin calculations, and lightning fast deal alerts. Live on iOS App Store and Google Play.
             </motion.p>
             <motion.div variants={staggerItem} className="mt-2 pointer-events-auto">
               <a
@@ -416,24 +416,24 @@ export function ScrollytellingSection({
           </motion.div>
         </CinematicOverlay>
 
-        {/* Phase 4: Polymarket Trading | Frames 161-220 (67% - 91.6%) */}
+        {/* Phase 4: Polymarket Bot | Frames 161-220 (67% - 91.6%) */}
         <CinematicOverlay
           active={activePhase === 4}
           scrollYProgress={smoothProgress}
           range={[161 / 240, 220 / 240]}
           position="bottom-left"
         >
-          <FlankingLabel text="Prediction Market Analytics" colorClass="text-[var(--polymarket)]/60" />
+          <FlankingLabel text="Prediction Trading Bot" colorClass="text-[var(--polymarket)]/60" />
           <motion.div variants={staggerContainer} initial="hidden" animate="show" className="flex flex-col gap-3 mt-1">
             <motion.h3 variants={staggerItem} className="text-3xl sm:text-4xl md:text-5xl font-serif text-white/95 leading-tight font-light">
-              Polymarket Trading.
+              Polymarket Trading Bot.
             </motion.h3>
             <motion.p variants={staggerItem} className="text-sm font-sans text-white/60 max-w-md leading-relaxed font-light">
-              Premium prediction market analytics dashboard. Track sentiment changes, volume spikes, and smart wallet positions with sub-second accuracy to back your predictions with structured data.
+              Autonomous prediction market trading bot. Deploy automated execution strategies, track sentiment changes, volume spikes, and smart wallet positions with sub-second accuracy.
             </motion.p>
             <motion.div variants={staggerItem} className="mt-2 pointer-events-auto">
               <a
-                href="https://pmkt.bcinvestments.one"
+                href="https://pmkt.hollowscan.com"
                 target="_blank"
                 rel="noreferrer"
                 onMouseEnter={handleBlueHoverEnter}
@@ -444,7 +444,7 @@ export function ScrollytellingSection({
                   color: "rgba(255,255,255,0.95)",
                 }}
               >
-                Access Dashboard →
+                Access Bot Dashboard →
               </a>
             </motion.div>
           </motion.div>

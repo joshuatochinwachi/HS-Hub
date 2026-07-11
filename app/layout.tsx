@@ -12,21 +12,21 @@ const cormorant = Cormorant_Garamond({
 })
 
 export const metadata: Metadata = {
-  title: "HS Hub | YieldSage, HollowScan & Polymarket Analytics",
+  title: "HS Hub | YieldSage, HollowScan & Polymarket Trading Bot",
   description:
-    "Unifying premium DeFi yield intelligence on Mantle, real-time retail arbitrage scanning, and prediction market analytics tools under one cinematic space.",
+    "Unifying premium DeFi yield intelligence on Mantle, real-time retail arbitrage scanning, and a prediction market trading bot under one cinematic space.",
 
   openGraph: {
-    title: "HS Hub | YieldSage, HollowScan & Polymarket Analytics",
+    title: "HS Hub | YieldSage, HollowScan & Polymarket Trading Bot",
     description:
-      "One unified space for YieldSage DeFi, HollowScan arbitrage, and Polymarket prediction analytics.",
+      "One unified space for YieldSage DeFi, HollowScan arbitrage, and a Polymarket trading bot.",
     images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "HS Hub" }],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "HS Hub | YieldSage, HollowScan & Polymarket Analytics",
-    description: "One unified space for YieldSage DeFi, HollowScan arbitrage, and Polymarket prediction analytics.",
+    title: "HS Hub | YieldSage, HollowScan & Polymarket Trading Bot",
+    description: "One unified space for YieldSage DeFi, HollowScan arbitrage, and a Polymarket trading bot.",
     images: ["/og-image.png"],
   },
 }

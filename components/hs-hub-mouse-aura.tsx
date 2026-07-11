@@ -237,7 +237,7 @@ export function HsHubMouseAura() {
           <div>HS-HUB-CORE-SEQUENCE</div>
         </div>
         <div className="absolute bottom-[12%] right-[7%] font-mono text-[8px] text-white/25 rotate-[-5deg] text-right">
-          <div>BC INVESTMENTS 2026</div>
+          <div>HOLLOWSCAN 2026</div>
           <div>SUITE: YS + HS + PMKT</div>
         </div>
       </div>
