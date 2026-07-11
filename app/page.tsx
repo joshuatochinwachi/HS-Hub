@@ -246,12 +246,18 @@ export default function Home() {
                     [Placeholdered: HollowScan mobile search radar layout. Drop live app screens / scan dashboard asset here.]
                   </p>
                   <div className="flex items-center gap-3">
-                    <span className="px-3 py-1.5 rounded bg-white/5 border border-white/10 text-[9px] font-mono text-white/50">
+                    <a
+                      href="/ios"
+                      className="px-3 py-1.5 rounded bg-white/5 border border-white/10 text-[9px] font-mono text-white/50 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                    >
                       iOS App Store
-                    </span>
-                    <span className="px-3 py-1.5 rounded bg-white/5 border border-white/10 text-[9px] font-mono text-white/50">
+                    </a>
+                    <a
+                      href="/android"
+                      className="px-3 py-1.5 rounded bg-white/5 border border-white/10 text-[9px] font-mono text-white/50 hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                    >
                       Google Play Store
-                    </span>
+                    </a>
                   </div>
                 </div>
               </div>
