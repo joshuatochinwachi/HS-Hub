@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useCallback, useRef, useEffect } from "react"
+import Image from "next/image"
 import { LoadingScreen } from "@/components/loading-screen"
 import { HsHubMouseAura } from "@/components/hs-hub-mouse-aura"
 import { ScrollytellingSection } from "@/components/scrollytelling-section"
@@ -86,9 +87,14 @@ export default function Home() {
           >
             {/* Logo */}
             <div className="flex items-center gap-2 group select-none">
-              <span className="w-6 h-6 rounded bg-gradient-to-tr from-[var(--yieldsage)] to-[var(--polymarket)] flex items-center justify-center text-[10px] font-bold font-mono text-black">
-                HS
-              </span>
+              <Image
+                src="/logo.png"
+                alt="HS Hub Logo"
+                width={24}
+                height={24}
+                className="object-contain transition-transform duration-300 group-hover:scale-110"
+                priority
+              />
               <span className="text-sm font-semibold tracking-wider font-sans text-white/90">
                 HS <span className="text-white/40">Hub</span>
               </span>

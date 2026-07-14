@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState, useRef } from "react"
+import NextImage from "next/image"
 
 interface LoadingScreenProps {
   onComplete: (first40Frames: HTMLImageElement[]) => void
@@ -142,7 +143,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
         {/* Core Product Logo block with laser scan sweep */}
         <div className="relative mb-8 select-none">
           <div
-            className="w-20 h-20 border-2 rounded-xl flex items-center justify-center relative overflow-hidden"
+            className="w-20 h-20 border-2 rounded-xl flex items-center justify-center relative overflow-hidden p-3"
             style={{
               borderColor: "rgba(0,255,136,0.35)",
               boxShadow: "0 0 30px rgba(0,255,136,0.15), inset 0 0 15px rgba(0,255,136,0.1)",
@@ -156,10 +157,15 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
                 transition: "transform 0.1s linear",
               }}
             />
-            {/* Text logo fallback for premium fintech feel */}
-            <span className="text-xl font-bold font-mono tracking-wider text-[var(--yieldsage)]">
-              HS
-            </span>
+            {/* Logo Image */}
+            <NextImage
+              src="/logo.png"
+              alt="HS Hub Logo"
+              width={56}
+              height={56}
+              className="object-contain relative z-10"
+              priority
+            />
           </div>
 
           {/* Dual Orbiting glowing dots */}
