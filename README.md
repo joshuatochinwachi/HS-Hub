@@ -193,7 +193,8 @@ HS-Hub/
 ├── public/                              # Static Assets
 │   ├── frames/                          # Pre-rendered 3D animation canvas frame JPEGs (ezgif-frame-001.jpg)
 │   ├── products/                        # Pokémon/TCG arbitrage product images
-│   └── videos/                          # YieldSage walkthrough mp4 video demo
+│   ├── videos/                          # YieldSage walkthrough mp4 video demo
+│   └── logo.png                         # HS Hub logo
 │
 ├── copy_products.ps1                    # Utility PowerShell script to copy local IDE assets
 ├── next.config.mjs                      # Next.js config parameters
