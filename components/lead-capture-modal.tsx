@@ -20,14 +20,26 @@ export default function LeadCaptureModal() {
   const [isNudged, setIsNudged] = useState(false);
   const [pendingUrl, setPendingUrl] = useState<string | null>(null);
 
-  // Helper to check if already submitted
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  // Dual-layer cache check: localStorage + 1-year persistent cookie
   const hasSubmitted = () => {
     try {
-      return localStorage.getItem(SUBMITTED_KEY) === 'true';
+      if (typeof window === 'undefined') return false;
+      const local = localStorage.getItem(SUBMITTED_KEY) === 'true';
+      const cookie = document.cookie.split('; ').some((row) => row.startsWith(`${SUBMITTED_KEY}=true`));
+      return local || cookie;
     } catch {
       return false;
     }
   };
+
+  // Sync submitted state on mount
+  useEffect(() => {
+    if (hasSubmitted()) {
+      setIsSubmitted(true);
+    }
+  }, []);
 
   // Helper to check if recently dismissed
   const isDismissed = () => {
@@ -159,9 +171,13 @@ export default function LeadCaptureModal() {
       try {
         localStorage.setItem(SUBMITTED_KEY, 'true');
         localStorage.setItem(DISMISSED_KEY, String(Date.now()));
+        // 1-year persistent cookie for dual-layer redundancy across browser sessions
+        document.cookie = `${SUBMITTED_KEY}=true; max-age=31536000; path=/; SameSite=Lax`;
       } catch {
         // Ignore storage errors
       }
+
+      setIsSubmitted(true);
 
       setTimeout(() => {
         setVisible(false);
@@ -179,7 +195,7 @@ export default function LeadCaptureModal() {
     }
   };
 
-  if (!visible || pathname === '/privacy-policy' || pathname === '/privacy') {
+  if ((isSubmitted && status !== 'sent') || !visible || pathname === '/privacy-policy' || pathname === '/privacy') {
     return null;
   }
 
