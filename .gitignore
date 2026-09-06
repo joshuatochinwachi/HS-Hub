@@ -1,6 +1,10 @@
+.env
+.env.local
+.env*.local
 *.env
 *.env.example
 *.env.local
 node_modules/
 .next/
 __pycache__/
+prompt.md

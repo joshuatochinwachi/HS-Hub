@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { Inter, Cormorant_Garamond } from "next/font/google"
 import { LenisProvider } from "@/components/lenis-provider"
+import LeadCaptureModal from "@/components/lead-capture-modal"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
@@ -55,6 +56,7 @@ export default function RootLayout({
         <LenisProvider>
           {children}
         </LenisProvider>
+        <LeadCaptureModal />
       </body>
     </html>
   )

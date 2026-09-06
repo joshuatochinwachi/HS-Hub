@@ -111,6 +111,11 @@ export function PrivacyPolicyContent() {
                           <strong className="text-foreground">Profile Data:</strong> You may choose to provide
                           additional information such as a bio or location in your profile settings.
                         </li>
+                        <li>
+                          <strong className="text-foreground">Early Access & Lead Capture Data:</strong> When you sign up
+                          via our website lead capture form, we collect your name, email address, optional phone number,
+                          and the source page URL you visited.
+                        </li>
                       </ul>
                     </div>
 
@@ -146,6 +151,9 @@ export function PrivacyPolicyContent() {
                     <li>Respond to your comments, questions, and requests.</li>
                     <li>
                       Monitor and analyze trends, usage, and activities in connection with our services.
+                    </li>
+                    <li>
+                      Send you early access updates, release announcements, and promotional communications regarding HollowScan if you opted in via our website form (based on your explicit consent, which you can withdraw at any time).
                     </li>
                   </ul>
                 </section>
@@ -191,6 +199,19 @@ export function PrivacyPolicyContent() {
                       <p className="text-muted-foreground leading-relaxed">
                         With your consent, we may send push notifications to your mobile device. You can deactivate
                         these messages at any time by changing the notification settings on your mobile device.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-lg font-semibold text-foreground mb-3">Early Access Communications & Data Retention</h3>
+                      <p className="text-muted-foreground leading-relaxed mb-2">
+                        Contact details provided via our website lead capture form are retained strictly for the duration of the early access programme or until you withdraw your consent.
+                      </p>
+                      <p className="text-muted-foreground leading-relaxed">
+                        You can withdraw your consent, request erasure, or opt out of communications at any time by emailing us at{" "}
+                        <a href="mailto:support@hollowscan.com" className="text-foreground hover:text-accent underline transition-colors">
+                          support@hollowscan.com
+                        </a>.
                       </p>
                     </div>
                   </div>
