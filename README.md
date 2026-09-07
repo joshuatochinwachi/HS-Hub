@@ -200,6 +200,7 @@ HS-Hub/
 ├── next.config.mjs                      # Next.js config parameters
 ├── postcss.config.mjs                   # PostCSS Tailwind CSS v4 processor setup
 ├── tsconfig.json                        # Strict TypeScript compilation configs
+├── test_lead_capture.py                 # Test script for lead capture modal
 └── package.json                         # Node dependency definitions and run scripts
 ```
 
